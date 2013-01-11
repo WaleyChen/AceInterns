@@ -17,6 +17,7 @@ gem "mongoid"
 
 # ----- Views ---------------------------------------------------------------
 gem "twitter-bootstrap-rails"
+gem "less-rails"
 gem 'haml'
 gem 'haml-rails'
 gem 'sass-rails',   '~> 3.2.3'
