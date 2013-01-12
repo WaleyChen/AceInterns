@@ -17,6 +17,10 @@
     margin-top: 30px;
   }
 
+  #footer {
+    height: 60px;
+  }
+
   #form-wrapper {
     height: 150px;
     margin-left: auto;
@@ -36,6 +40,10 @@
 
   #newsletter_subscriber_email {
     margin-top: 20px !important;
+  }
+
+  #newsletter_subscriber_email,
+  textarea {
     text-align: center;
   }
 
@@ -58,7 +66,7 @@
     }
   }
 
-  input, label {
+  input, label, textarea {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 20px; 
     font-weight: 100;

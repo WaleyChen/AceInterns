@@ -1,0 +1,148 @@
+#newsletter
+  - if @newsletter_subscriber.errors.present?
+    .alert.alert-error= flash[:error]
+
+  #title= 'AceInterns'
+  #heading= 'Get a Biweekly Newsletter of Awesome Internships'
+
+  %table.table.table-hover
+    %thead
+      %tr
+        %th#hacker Hacker
+        %th#hustler Hustler
+        %th#designer Designer
+    %tbody
+      - # code smell, move logic to controller
+      - (0..12).each do |i|
+        - hacker = @hackers[i]
+        - hustler = @hustlers[i]
+
+        - hacker = @hackers[i]
+        - if hacker.present?
+          - hacker_title = "#{ hacker.title } (#{ hacker.city }, #{ hacker.state })"
+          - hacker_title.prepend "#{ hacker.company_name } - " if hacker && hacker.company_name.present?
+
+        - hustler = @hustlers[i]
+          - if hustler.present?
+          - hustler_title = "#{ hustler.title } (#{ hustler.city }, #{ hustler.state })"
+          - hustler_title.prepend "#{ hustler.company_name } - " if hustler && hustler.company_name.present?
+
+        - designer = @designers[i]
+        - if designer.present?
+          - designer_title = "#{ designer.title } (#{ designer.city }, #{ designer.state })"
+          - designer_title.prepend "#{ designer.company_name } - " if designer && designer.company_name.present?
+        
+        %tr
+          %td
+            = link_to hacker_title, hacker.apply_link if hacker.present?
+          %td
+            = link_to hustler_title, hustler.apply_link if hustler.present?
+          %td
+            = link_to designer_title, designer.apply_link if designer.present?
+
+  #heading= "Any preferences?"
+
+  - if @newsletter_subscriber.errors.present?
+    .alert.alert-error
+      - @newsletter_subscriber.errors.each do |k, v|
+        - if v == 'is invalid'
+          = "- #{ k } #{ v }"
+        - else
+          = "- #{ v }"
+        %br
+  - else 
+    %br
+
+  #form-wrapper
+    = form_for @newsletter_subscriber do |form|
+      #level-wrapper
+        .row
+          = form.label "Junior        "
+          = check_box_tag "newsletter_subscriber[job_level][]", 'junior', attribute_selected?(@newsletter_subscriber, 'job_level', 'junior', false)
+        .row
+          = form.label 'Intermediate'
+          = check_box_tag "newsletter_subscriber[job_level][]", 'intermediate', attribute_selected?(@newsletter_subscriber, 'job_level', 'intermediate', false)
+        .row
+          = form.label 'Senior'
+          = check_box_tag "newsletter_subscriber[job_level][]", 'senior', attribute_selected?(@newsletter_subscriber, 'job_level', 'senior', false)
+
+      #canada
+        .row
+          = form.label 'Canada'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_all', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_all', true), :id => 'canada_checkbox'
+        .row
+          = form.label 'Toronto'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_toronto', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_toronto', true), :class => 'canada'
+        .row
+          = form.label :jobs_interested_in, 'Waterloo'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_waterloo', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_waterloo', true), :class => 'canada'
+        .row
+          = form.label 'Vancouver'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_vancouver', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_vancouver', true), :class => 'canada'
+        .row
+          = form.label 'Ottawa'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_ottawa', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_ottawa', true), :class => 'canada'
+        .row
+          = form.label :jobs_interested_in, 'Montreal'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_montreal', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_montreal', true), :class => 'canada'
+
+      #usa
+        .row
+          = form.label :jobs_interested_in, 'USA'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_all', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_all', true), :id => 'usa_checkbox'
+        .row
+          = form.label 'California'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_california', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_california', true), :class => 'usa'
+        .row
+          = form.label :jobs_interested_in, 'New York'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_new_york', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_new_york', true), :class => 'usa'
+        .row
+          = form.label 'Florida'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_florida', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_florida', true), :class => 'usa'
+        .row
+          = form.label 'Washington'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_washington', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_washington', true), :class => 'usa'
+        .row
+          = form.label 'Texas'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_texas', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_texas', true), :class => 'usa'
+
+      #category-wrapper
+        .row
+          = form.label 'Hacker'
+          = check_box_tag "newsletter_subscriber[job_category][]", 'hacker', attribute_selected?(@newsletter_subscriber, 'job_category', 'hacker', false)
+        .row
+          = form.label 'Hustler'
+          = check_box_tag "newsletter_subscriber[job_category][]", 'hustler', attribute_selected?(@newsletter_subscriber, 'job_category', 'hustler', false)
+        .row
+          = form.label 'Designer'
+          = check_box_tag "newsletter_subscriber[job_category][]", 'designer', attribute_selected?(@newsletter_subscriber, 'job_category', 'designer', false)
+
+      #subscribe-area
+        .row= form.email_field :email, :placeholder => 'Email'
+        .row= form.text_area :other_preferences, :placeholder => 'Any other preferences? Let us know!', :rows => 4
+        .row#subscribe-btn= form.submit 'Subscribe!'
+
+      #footer
+
+- content_for :javascript do
+  :javascript
+
+    $(document).ready(function () {
+
+      $("#canada_checkbox").change(function() {
+        if (this.checked) {
+          $(".canada:not(:checked)").trigger('click')
+        } else {
+          $(".canada:checked").trigger('click')
+        }
+      });
+
+      $("#usa_checkbox").change(function() {
+        if (this.checked) {
+          $(".usa:not(:checked)").trigger('click')
+        } else {
+          $(".usa:checked").trigger('click')
+        }
+      });
+
+    });
