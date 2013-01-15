@@ -5,7 +5,9 @@
   #title= 'AceInterns'
   #heading= 'Get a Biweekly Newsletter of Awesome Internships'
 
-  %table.table.table-hover
+  #brands= image_tag('logo/brands.png')
+
+  -#%table.table.table-hover
     %thead
       %tr
         %th#hacker Hacker
@@ -119,7 +121,7 @@
 
       #subscribe-area
         .row= form.email_field :email, :placeholder => 'Email'
-        .row= form.text_area :other_preferences, :placeholder => 'Any other preferences? Let us know!', :rows => 4
+        -#.row= form.text_area :other_preferences, :placeholder => 'Any other preferences? Let us know!', :rows => 4
         .row#subscribe-btn= form.submit 'Subscribe!'
 
       #footer
