@@ -5,6 +5,8 @@ class Company
   field :link
   field :name, :default => ''
 
+  field :startup_type
+
   has_many :jobs
   field :job_count
 

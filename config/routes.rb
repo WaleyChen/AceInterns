@@ -56,7 +56,12 @@ AceInterns::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   root :to => 'NewsletterSubscribers#new'
-  get 'newsletter' => 'newslettersubscriber#new'
+
   resources :jobs
+  get 'hn_jan_2013' => 'jobs#hn_jan_2013'
+
   resources :newsletter_subscribers
+  get 'newsletter' => 'NewsletterSubscribers#new'
+
+  get 'aceinterns' => 'application#aceinterns'
 end

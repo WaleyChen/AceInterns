@@ -16,4 +16,9 @@ class JobsController < ApplicationController
     @job = Job.new
   end
 
+
+  def hn_jan_2013
+    @jobs = Job.where(:startup_type => 'hn_jan_2013').asc(:company_name)
+    render :layout => 'hn_jobs'
+  end
 end

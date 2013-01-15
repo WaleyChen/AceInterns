@@ -1,142 +1,142 @@
-body {
+#aceinterns {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; 
   -webkit-font-smoothing: antialiased;
-}
 
-#right-panel {
+  #right-panel {
 
-  position: fixed;
-  left: 50%;
-  width: 50%;
+    position: fixed;
+    left: 50%;
+    width: 50%;
 
-  #iframe-wrapper {
-    padding-left: 12px;
-    height: 100%;
-    width: 100%;
-
-    iframe {
+    #iframe-wrapper {
+      padding-left: 12px;
       height: 100%;
-      width: 100% !important; 
-    }
-  }
-
-  p {
-    padding-left: 12px;
-  }
-}
-
-#left-panel {
-  display: inline-block;
-  width: 50%;
-
-  li #features {
-    float: right !important;
-  }
-
-  #criteria {
-    #dropdowns {
-
-      #country {
-        select { 
-          width: 103px;
-        }
-      }
-
-      #term {
-        select { 
-          width: 103px;
-        }
-      }
-
-      div {
-        display: inline-block;
-      }
-    }
-
-    #level {
-
-      .set {
-
-        display: inline-block;
-        margin-left: 8px;
-
-        h4 {
-          display: inline-block;
-        }
-
-      }
-    }
-
-    h3,
-    select {
-      margin-left: 8px;
-    }
-
-    label {
-      display: inline-block;
-    }
-
-    table {
       width: 100%;
 
-      td {
-        vertical-align: top;
+      iframe {
+        height: 100%;
+        width: 100% !important; 
       }
     }
 
-    .toggle-set {
-      .set {
-        display: inline-block;
-        width: 170px;
-
-        .iPhoneCheckContainer {
-          width: 170px !important;
-        }
-        .iPhoneCheckHandle {
-          width: 70px !important;
-        }
-      }
+    p {
+      padding-left: 12px;
     }
   }
 
-  #results {
-    h3 {
-      margin-left: 8px;
+  #left-panel {
+    display: inline-block;
+    width: 50%;
+
+    li #features {
+      float: right !important;
     }
 
-    table {
-      #title {
-        width: 50%;
+    #criteria {
+      #dropdowns {
+
+        #country {
+          select { 
+            width: 103px;
+          }
+        }
+
+        #term {
+          select { 
+            width: 103px;
+          }
+        }
+
+        div {
+          display: inline-block;
+        }
       }
 
-      #company {
-        width: 16%;
+      #level {
+
+        .set {
+
+          display: inline-block;
+          margin-left: 8px;
+
+          h4 {
+            display: inline-block;
+          }
+
+        }
       }
 
-      #location {
-        width: 18%;
+      h3,
+      select {
+        margin-left: 8px;
       }
 
-      #deadline {
-        width: 16%;
+      label {
+        display: inline-block;
       }
 
-      tr {
-        cursor: pointer;
+      table {
+        width: 100%;
 
         td {
-          vertical-align: middle;
+          vertical-align: top;
+        }
+      }
+
+      .toggle-set {
+        .set {
+          display: inline-block;
+          width: 170px;
+
+          .iPhoneCheckContainer {
+            width: 170px !important;
+          }
+          .iPhoneCheckHandle {
+            width: 70px !important;
+          }
+        }
+      }
+    }
+
+    #results {
+      h3 {
+        margin-left: 8px;
+      }
+
+      table {
+        #title {
+          width: 50%;
+        }
+
+        #company {
+          width: 16%;
+        }
+
+        #location {
+          width: 18%;
+        }
+
+        #deadline {
+          width: 16%;
+        }
+
+        tr {
+          cursor: pointer;
+
+          td {
+            vertical-align: middle;
+          }
         }
       }
     }
   }
-}
 
-.nav {
-  li {
-    border-color: #08C;
-    border-right-style: solid !important;
-    border-right-width: 1px !important;
-    font-weight: 101;
+  .nav {
+    li {
+      border-color: #08C;
+      border-right-style: solid !important;
+      border-right-width: 1px !important;
+      font-weight: 101;
+    }
   }
 }
