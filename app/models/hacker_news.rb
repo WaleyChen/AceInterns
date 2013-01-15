@@ -9,7 +9,8 @@ class HackerNews
       apply_link: { :email => 'joel@bufferapp.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'       
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993197'
     },
     {
       title: 'DevOps Engineer Interns',
@@ -18,25 +19,18 @@ class HackerNews
       apply_link: { :email => 'joel@bufferapp.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'       
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993197'  
     },
     {
-      title: 'UI Design Intern',
+      title: 'Engineering Interns',
       company: 'MindSnacks',
       startup_type: 'hn_jan_2013',
       apply_link: { :email => 'jobs@mindsnacks.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
-    },
-    {
-      title: 'Art-Design Intern',
-      company: 'MindSnacks',
-      startup_type: 'hn_jan_2013',
-      apply_link: { :email => 'jobs@mindsnacks.com' },
-      country: 'US',
-      state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993040'
     },
     {
       title: 'Engineering Interns',
@@ -45,7 +39,8 @@ class HackerNews
       apply_link: { :email => 'tim@mixpanel.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4992873'
     },
     {
       title: 'Software Developer Intern',
@@ -54,7 +49,8 @@ class HackerNews
       apply_link: 'https://www.khanacademy.org/careers',
       country: 'US',
       state: 'CA',
-      city: 'Mountain View'
+      city: 'Mountain View',
+      description_link: 'http://news.ycombinator.com/item?id=4993263'
     },
     {
       title: 'Mobile Developer Intern',
@@ -63,7 +59,8 @@ class HackerNews
       apply_link: 'https://www.khanacademy.org/careers',
       country: 'US',
       state: 'CA',
-      city: 'Mountain View'
+      city: 'Mountain View',
+      description_link: 'http://news.ycombinator.com/item?id=4993263'
     },
     {
       title: 'Front End Developer Intern',
@@ -72,7 +69,8 @@ class HackerNews
       apply_link: { :email => 'jobs@carethread.com' },
       country: 'US',
       state: 'RI',
-      city: 'Providence'
+      city: 'Providence',
+      description_link: 'http://news.ycombinator.com/item?id=4992832'
     },
     {
       title: 'Mobile Developer Intern',
@@ -81,7 +79,8 @@ class HackerNews
       apply_link: { :email => 'jobs@carethread.com' },
       country: 'US',
       state: 'RI',
-      city: 'Providence'
+      city: 'Providence',
+      description_link: 'http://news.ycombinator.com/item?id=4992832'
     },
     {
       title: 'Back End Developer Intern',
@@ -90,7 +89,8 @@ class HackerNews
       apply_link: { :email => 'jobs@carethread.com' },
       country: 'US',
       state: 'RI',
-      city: 'Providence'
+      city: 'Providence',
+      description_link: 'http://news.ycombinator.com/item?id=4992832'
     },
     {
       title: 'Ruby on Rails Developer Intern',
@@ -99,7 +99,8 @@ class HackerNews
       apply_link: { :email => 'jared@scribd.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993827'
     },
     {
       title: 'JavaScript Developer Intern',
@@ -108,7 +109,8 @@ class HackerNews
       apply_link: { :email => 'jared@scribd.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993827'
     },
     {
       title: 'iOS Developer Intern',
@@ -117,7 +119,8 @@ class HackerNews
       apply_link: { :email => 'jared@scribd.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993827'
     },
     {
       title: 'Android Developer Intern',
@@ -126,7 +129,8 @@ class HackerNews
       apply_link: { :email => 'jared@scribd.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993827'
     },
     {
       title: 'Machine Learning Developer Intern',
@@ -135,7 +139,8 @@ class HackerNews
       apply_link: { :email => 'jared@scribd.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993827'
     },
     {
       title: 'Back End Intern',
@@ -144,7 +149,8 @@ class HackerNews
       apply_link: { :email => 'jared@scribd.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993827'
     },
     {
       title: 'DevOps Intern',
@@ -153,7 +159,8 @@ class HackerNews
       apply_link: { :email => 'jared@scribd.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993827'
     },
     {
       title: 'Web Infrastructure Intern',
@@ -162,7 +169,8 @@ class HackerNews
       apply_link: { :email => 'jared@scribd.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4993827'
     },
     {
       title: 'Software Engineer Interns',
@@ -171,16 +179,18 @@ class HackerNews
       apply_link: { :email => 'jobs@radiusintel.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4992811'
     },
     {
-      title: 'Elite Finance Software Engineer Interns',
+      title: 'Finance Software Engineer Interns',
       company: 'Two Sigma',
       startup_type: 'hn_jan_2013',
       apply_link: { :email => 'dave.hahn@twosigma.com' },
       country: 'US',
       state: 'NY',
-      city: 'Manhattan'
+      city: 'Manhattan',
+      description_link: 'http://news.ycombinator.com/item?id=4992667'
     },
     {
       title: 'Biology Software Engineer Intern',
@@ -189,7 +199,8 @@ class HackerNews
       apply_link: 'https://ginkgo.resumetracker.com/public/job_detail/83',
       country: 'US',
       state: 'MA',
-      city: 'Boston'
+      city: 'Boston',
+      description_link: 'http://news.ycombinator.com/item?id=4993850'
     },
     {
       title: 'Sales Intern',
@@ -198,7 +209,8 @@ class HackerNews
       apply_link: 'http://www.localist.com/about/careers',
       country: 'US',
       state: 'MD',
-      city: 'Maryland'
+      city: 'Maryland',
+      description_link: 'http://news.ycombinator.com/item?id=4992929'
     },
     {
       title: 'Marketing Intern',
@@ -207,7 +219,8 @@ class HackerNews
       apply_link: 'http://www.localist.com/about/careers',
       country: 'US',
       state: 'MD',
-      city: 'Maryland'
+      city: 'Maryland',
+      description_link: 'http://news.ycombinator.com/item?id=4992929'
     },
     {
       title: 'Support Intern',
@@ -216,7 +229,8 @@ class HackerNews
       apply_link: 'http://www.localist.com/about/careers',
       country: 'US',
       state: 'MD',
-      city: 'Maryland'
+      city: 'Maryland',
+      description_link: 'http://news.ycombinator.com/item?id=4992929'
     },
     {
       title: 'Ruby on Rails Developer Intern',
@@ -225,7 +239,8 @@ class HackerNews
       apply_link: 'http://www.localist.com/about/careers',
       country: 'US',
       state: 'MD',
-      city: 'Maryland'
+      city: 'Maryland',
+      description_link: 'http://news.ycombinator.com/item?id=4992929'
     },
     {
       title: 'Software Engineer Intern',
@@ -234,7 +249,8 @@ class HackerNews
       apply_link: { :email => 'greg@dropcam.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4992758'
     },
     {
       title: 'Hardware Engineer Intern',
@@ -243,7 +259,8 @@ class HackerNews
       apply_link: { :email => 'greg@dropcam.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4992758'
     },
     {
       title: 'Product Management Intern',
@@ -252,7 +269,8 @@ class HackerNews
       apply_link: { :email => 'greg@dropcam.com' },
       country: 'US',
       state: 'CA',
-      city: 'San Francisco'
+      city: 'San Francisco',
+      description_link: 'http://news.ycombinator.com/item?id=4992758'
     },
     {
       title: 'Software Engineer Intern',
@@ -261,7 +279,8 @@ class HackerNews
       apply_link: 'http://prezi.com/jobs/oJw1VfwV/',
       country: 'EU',
       state: 'HU',
-      city: 'Budapest'
+      city: 'Budapest',
+      description_link: 'http://news.ycombinator.com/item?id=4993720'
     },
     {
       title: 'Machine Learning Engineer Intern',
@@ -270,7 +289,8 @@ class HackerNews
       apply_link: 'http://www.cbinsights.com/jobs/',
       country: 'US',
       state: 'NY',
-      city: 'New York'
+      city: 'New York',
+      description_link: 'http://news.ycombinator.com/item?id=4992947'
     },
     {
       title: 'Full Stack Developer Intern',
@@ -279,7 +299,8 @@ class HackerNews
       apply_link: 'http://www.cbinsights.com/jobs/',
       country: 'US',
       state: 'NY',
-      city: 'New York'
+      city: 'New York',
+      description_link: 'http://news.ycombinator.com/item?id=4992947'
     },
     {
       title: 'Tech Industry Analyst Intern',
@@ -288,7 +309,8 @@ class HackerNews
       apply_link: 'http://www.cbinsights.com/jobs/',
       country: 'US',
       state: 'NY',
-      city: 'New York'
+      city: 'New York',
+      description_link: 'http://news.ycombinator.com/item?id=4992947'
     },
     {
       title: 'Product Adoption Manager Intern',
@@ -297,7 +319,8 @@ class HackerNews
       apply_link: 'http://www.cbinsights.com/jobs/',
       country: 'US',
       state: 'NY',
-      city: 'New York'
+      city: 'New York',
+      description_link: 'http://news.ycombinator.com/item?id=4992947'
     },
     {
       title: 'OS/Virtualization Developer Intern',
@@ -306,7 +329,8 @@ class HackerNews
       apply_link: { :email => 'gthomas@mokafive.com' },
       country: 'US',
       state: 'CA',
-      city: 'Redwood City'
+      city: 'Redwood City',
+      description_link: 'http://news.ycombinator.com/item?id=4993683'
     }
    ]
 
@@ -329,6 +353,7 @@ class HackerNews
       end
 
       job = Job.create(hacker)
+      job.description_link = hacker[:description_link]
       job.in_newsletter = true
       job.company = company
       job.save

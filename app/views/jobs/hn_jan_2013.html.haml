@@ -9,13 +9,21 @@
           %th#location= link_to 'Location', params.merge({ :sort => 'location' })
           %th#location= link_to 'Apply', params.merge({ :sort => 'apply' })
       %tbody
-      - @jobs.each do |job|
+      - @jobs.each_with_index do |job, index|
         - apply_link = job.apply_link.is_a?(Hash) ? mail_to(job.apply_link["email"], 'Email') : link_to('Apply', job.apply_link)
-        %tr{ :href => apply_link }
+
+        %tr.job{ :id => index, :href => job.description_link }
           %td.desc= job.title
-          - # %span.badge.badge-info= 'Javascript'
-          - # %span.badge.badge-info= 'MongoDB'
-          - # %span.badge.badge-info= 'Rails'
           %td= job.company.name if job.company.present?
           %td= "#{ job.city }, #{ job.state }, #{ job.country }" 
           %td= apply_link
+
+- content_for :javascript do
+  :javascript
+    $(document).ready(function() {
+ 
+      $("#results").on('click', 'tr.job', function(event) {
+        window.open($(this).attr('href'))
+      });
+ 
+    });

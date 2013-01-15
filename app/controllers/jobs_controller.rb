@@ -18,7 +18,15 @@ class JobsController < ApplicationController
 
 
   def hn_jan_2013
-    @jobs = Job.where(:startup_type => 'hn_jan_2013').asc(:company_name)
+
+    if params[:sort].nil? || params[:sort] == 'company'
+      @jobs = Job.where(:startup_type => 'hn_jan_2013').asc(:company_name)
+    elsif params[:sort] == 'title'
+      @jobs = Job.where(:startup_type => 'hn_jan_2013').asc(:title)
+    else
+
+    end
+
     render :layout => 'hn_jobs'
   end
 end

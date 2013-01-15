@@ -7,6 +7,7 @@ class Job
   field :country
   field :deadline, :default => ''
   field :description
+  field :description_link
   field :in_newsletter
 
   field :province
