@@ -6,5 +6,13 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    = yield :nav
+    #newsletter-center
+      = yield :center_panel
+    #newsletter-left-panel.container.pull-left
+      = yield :left_panel
+    #newsletter-right-panel.container.pull-right.fixed
+      = yield :right_panel
+    #bottom-panel
+      = yield :bottom_panel
   = yield :javascript

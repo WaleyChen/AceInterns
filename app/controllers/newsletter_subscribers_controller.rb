@@ -8,21 +8,23 @@ class NewsletterSubscribersController < ActionController::Base
   end
 
   def create
+    get_jobs
     @newsletter_subscriber = NewsletterSubscriber.new
     @newsletter_subscriber.email = params[:newsletter_subscriber][:email]
-    @newsletter_subscriber.job_category = params[:newsletter_subscriber][:job_category]
     @newsletter_subscriber.job_location = params[:newsletter_subscriber][:job_location]
     @newsletter_subscriber.job_level = params[:newsletter_subscriber][:job_level]
     @newsletter_subscriber.other_preferences = params[:newsletter_subscriber][:other_preferences]
 
     if !@newsletter_subscriber.save
       flash[:error] = "Please see the errors below."
-      get_jobs
       render :action => :new, :layout => 'newsletter'
+    else
+      render :layout => 'newsletter'
     end
   end
 
   def get_jobs
+    @jobs = Job.all.asc(:company_name)
     @hackers = Job.where(:startup_type => 'Hacker').all.to_a.shuffle!
     @hustlers = Job.where(:startup_type => 'Hustler').all.to_a.shuffle!
     @designers = Job.where(:startup_type => 'Designer').all.to_a.shuffle!
