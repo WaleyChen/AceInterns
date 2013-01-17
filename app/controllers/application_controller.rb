@@ -18,8 +18,6 @@ class ApplicationController < ActionController::Base
     @hustlers = Job.where(:startup_type => 'Hustler').all.to_a.shuffle!
     @designers = Job.where(:startup_type => 'Designer').all.to_a.shuffle!
 
-    @row_count = [@hackers.count, @hustlers.count, @designers.count].max
-
     render :layout => 'newsletter'
   end
 

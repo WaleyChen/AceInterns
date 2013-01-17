@@ -24,10 +24,10 @@ class NewsletterSubscribersController < ActionController::Base
   end
 
   def get_jobs
-    @jobs = Job.all.asc(:company_name)
-    @hackers = Job.where(:startup_type => 'Hacker').all.to_a.shuffle!
-    @hustlers = Job.where(:startup_type => 'Hustler').all.to_a.shuffle!
-    @designers = Job.where(:startup_type => 'Designer').all.to_a.shuffle!
-    @row_count = [@hackers.count, @hustlers.count, @designers.count].max
+    @jobs = Job.where("$or" => [ :intermediate => true, :senior => true ]).asc(:title)
+    # @jobs = Job.all.asc(:company_name).limit(25)
+    # @hackers = Job.where(:startup_type => 'Hacker').all.to_a.shuffle!
+    # @hustlers = Job.where(:startup_type => 'Hustler').all.to_a.shuffle!
+    # @designers = Job.where(:startup_type => 'Designer').all.to_a.shuffle!
   end
 end

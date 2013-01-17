@@ -54,14 +54,6 @@ class Hackers
       city: 'Toronto'       
     },
     {
-      company: 'Redwood Strategic',
-      title: 'Ruby on Rails Software Developer Co-op',
-      apply_link: 'http://upverter.com/careers/',
-      country: 'CA',
-      state: 'ON',
-      city: 'Toronto'       
-    },
-    {
       company: 'SAP Software',
       title: 'Mobile Empowerment Intern',
       apply_link: 'http://www.bctechnology.com/scripts/show_job.cfm?refpage=search_results3&company=SAP%20Software&allmatches=1&id=98431&keyword=&searchin=jobonly&st=bas&company_list=0&category=0&posted=last43200&anyall=any&by_x=ins_date&iterator=1',
