@@ -90,7 +90,10 @@
           - # %span.badge.badge-info= 'MongoDB'
           - # %span.badge.badge-info= 'Rails'
           %td= link_to job.company.name if job.company.present?
-          %td= "#{ job.city }, #{ job.province }, #{ job.country }"
+          - if job.city.nil? && job.province.nil?
+            %td= "#{ job.country }"
+          - else
+            %td= "#{ job.city }, #{ job.province }, #{ job.country }"
           - deadline = job.deadline
           - # %td= deadline.is_a?(String) ? job.deadline : job.deadline.strftime("%b %-d, %Y")
 
