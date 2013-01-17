@@ -84,7 +84,7 @@
           - # %th#deadline= link_to 'Deadline', ''
       %tbody
       - @jobs.each do |job|
-        - apply_link = job.apply_link.is_a?(Hash) ? mail_to(job.apply_link["email"], job.description_link) : link_to(job.title, job.apply_link)
+        - apply_link = job.apply_link.is_a?(Hash) ? mail_to(job.description_link, job.title) : link_to(job.title, job.apply_link)
         %tr{ :href => job.apply_link }
           %td.desc= apply_link
           - # %span.badge.badge-info= 'Javascript'
