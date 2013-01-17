@@ -86,7 +86,7 @@
       - @jobs.each do |job|
         - apply_link = job.apply_link.is_a?(Hash) ? mail_to(job.apply_link["email"], 'Email') : link_to('Apply', job.apply_link)
         %tr{ :href => job.apply_link }
-          %td.desc= link_to job.title, apply_link
+          %td.desc= apply_link
           - # %span.badge.badge-info= 'Javascript'
           - # %span.badge.badge-info= 'MongoDB'
           - # %span.badge.badge-info= 'Rails'
