@@ -1,0 +1,118 @@
+- content_for :left_panel do
+  #newsletter
+    - if @newsletter_subscriber.errors.present?
+      .alert.alert-error= flash[:error]
+
+    #brands= image_tag('logo/brands.png')
+
+    #title= 'AceInterns'
+    #heading= 'We Connect You with Awesome Tech Internships'
+    #heading= '1. Let us know about what interests you.'
+    #heading= "2. We'll aggregate job postings that match your preferences."
+    #heading= '3. You receive a newsletter of awesome tech internships tailored just for you.'
+
+    %br
+    %br
+    #heading= "Select Your Preferences:"
+    %br
+
+    = form_for @newsletter_subscriber do |form|
+      #level-wrapper
+        .row
+          = form.label "Junior        "
+          = check_box_tag "newsletter_subscriber[job_level][]", 'junior', attribute_selected?(@newsletter_subscriber, 'job_level', 'junior', false)
+        .row
+          = form.label 'Intermediate'
+          = check_box_tag "newsletter_subscriber[job_level][]", 'intermediate', attribute_selected?(@newsletter_subscriber, 'job_level', 'intermediate', false)
+        .row
+          = form.label 'Senior'
+          = check_box_tag "newsletter_subscriber[job_level][]", 'senior', attribute_selected?(@newsletter_subscriber, 'job_level', 'senior', false)
+
+      #canada
+        .row
+          = form.label 'Canada'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_all', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_all', true), :id => 'canada_checkbox'
+        .row
+          = form.label 'Toronto'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_toronto', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_toronto', true), :class => 'canada'
+        .row
+          = form.label :jobs_interested_in, 'Waterloo'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_waterloo', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_waterloo', true), :class => 'canada'
+        .row
+          = form.label 'Vancouver'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_vancouver', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_vancouver', true), :class => 'canada'
+        .row
+          = form.label 'Ottawa'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_ottawa', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_ottawa', true), :class => 'canada'
+        .row
+          = form.label :jobs_interested_in, 'Montreal'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'canada_montreal', attribute_selected?(@newsletter_subscriber, 'job_location', 'canada_montreal', true), :class => 'canada'
+
+      #usa
+        .row
+          = form.label :jobs_interested_in, 'USA'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_all', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_all', true), :id => 'usa_checkbox'
+        .row
+          = form.label 'California'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_california', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_california', true), :class => 'usa'
+        .row
+          = form.label :jobs_interested_in, 'New York'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_new_york', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_new_york', true), :class => 'usa'
+        .row
+          = form.label 'Florida'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_florida', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_florida', true), :class => 'usa'
+        .row
+          = form.label 'Washington'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_washington', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_washington', true), :class => 'usa'
+        .row
+          = form.label 'Texas'
+          = check_box_tag "newsletter_subscriber[job_location][]", 'usa_texas', attribute_selected?(@newsletter_subscriber, 'job_location', 'usa_texas', true), :class => 'usa'
+
+      #subscribe-area
+        .row= form.email_field :email, :placeholder => 'Email'
+        -#.row= form.text_area :other_preferences, :placeholder => 'Any other preferences? Let us know!', :rows => 4
+        .row#subscribe-btn= form.submit 'Subscribe!'
+
+- content_for :right_panel do
+  #results.well
+    %table.table.table-hover
+      %thead
+        %tr
+          %th#title= link_to 'Title', ''
+          %th#company= link_to 'Company', ''
+          %th#location= link_to 'Location', ''
+          - # %th#deadline= link_to 'Deadline', ''
+      %tbody
+      - @jobs.each do |job|
+        %tr{ :href => job.apply_link }
+          %td.desc= link_to job.title, job.apply_link
+          - # %span.badge.badge-info= 'Javascript'
+          - # %span.badge.badge-info= 'MongoDB'
+          - # %span.badge.badge-info= 'Rails'
+          %td= link_to job.company.name if job.company.present?
+          %td= "#{ job.city }, #{ job.province }, #{ job.country }"
+          - deadline = job.deadline
+          - # %td= deadline.is_a?(String) ? job.deadline : job.deadline.strftime("%b %-d, %Y")
+
+- content_for :javascript do
+  :javascript
+
+    $(document).ready(function () {
+
+      $("#canada_checkbox").change(function() {
+        if (this.checked) {
+          $(".canada:not(:checked)").trigger('click')
+        } else {
+          $(".canada:checked").trigger('click')
+        }
+      });
+
+      $("#usa_checkbox").change(function() {
+        if (this.checked) {
+          $(".usa:not(:checked)").trigger('click')
+        } else {
+          $(".usa:checked").trigger('click')
+        }
+      });
+
+    });

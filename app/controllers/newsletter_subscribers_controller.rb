@@ -24,7 +24,7 @@ class NewsletterSubscribersController < ActionController::Base
   end
 
   def get_jobs
-    @jobs = Job.where("$or" => [ :intermediate => true, :senior => true ]).asc(:title)
+    @jobs = Job.where("$or" => [ :intermediate => true, :senior => true ]).asc(:company_name)
     # @jobs = Job.all.asc(:company_name).limit(25)
     # @hackers = Job.where(:startup_type => 'Hacker').all.to_a.shuffle!
     # @hustlers = Job.where(:startup_type => 'Hustler').all.to_a.shuffle!

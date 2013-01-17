@@ -7,18 +7,14 @@ class JobsController < ApplicationController
   end
 
   def index
-    respond_to do |format|
-      format.js{ render :none => true }
-    end
+    @jobs = Job.all
   end
 
   def new
     @job = Job.new
   end
 
-
   def hn_jan_2013
-
     if params[:sort].nil? || params[:sort] == 'company'
       @jobs = Job.where(:startup_type => 'hn_jan_2013').asc(:company_name)
     elsif params[:sort] == 'title'
