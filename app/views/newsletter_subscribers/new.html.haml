@@ -14,7 +14,17 @@
     %br
     %br
     #heading= "Select Your Preferences:"
-    %br
+  
+    - if @newsletter_subscriber.errors.present?
+      .alert.alert-error
+        - @newsletter_subscriber.errors.each do |k, v|
+          - if v == 'is invalid'
+            = "- #{ k } #{ v }"
+          - else
+            = "- #{ v }"
+          %br
+    - else 
+      %br
 
     = form_for @newsletter_subscriber do |form|
       #level-wrapper
@@ -87,16 +97,11 @@
         - apply_link = job.apply_link.is_a?(Hash) ? link_to(job.title, job.description_link) : link_to(job.title, job.apply_link)
         %tr{ :href => job.apply_link }
           %td.desc= apply_link
-          - # %span.badge.badge-info= 'Javascript'
-          - # %span.badge.badge-info= 'MongoDB'
-          - # %span.badge.badge-info= 'Rails'
           %td= job.company.name if job.company.present?
           - if job.city.nil? && job.province.nil?
             %td= "#{ job.country }"
           - else
             %td= "#{ job.city }, #{ job.province }, #{ job.country }"
-          - deadline = job.deadline
-          - # %td= deadline.is_a?(String) ? job.deadline : job.deadline.strftime("%b %-d, %Y")
 
 - content_for :javascript do
   :javascript
