@@ -105,8 +105,9 @@
 
 - content_for :javascript do
   :javascript
-
     $(document).ready(function () {
+
+      mixpanel.track("tech_newsletter");
 
       $("#canada_checkbox").change(function() {
         if (this.checked) {

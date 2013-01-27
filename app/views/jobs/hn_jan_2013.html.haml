@@ -21,6 +21,8 @@
 - content_for :javascript do
   :javascript
     $(document).ready(function() {
+
+      mixpanel.track("hn_jan_2013");
  
       $("#results").on('hover', 'tr.job', function(event) {
         $(this).tooltip('show')
