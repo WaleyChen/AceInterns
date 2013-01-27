@@ -12,7 +12,7 @@
       - @jobs.each_with_index do |job, index|
         - apply_link = job.apply_link.is_a?(Hash) ? mail_to(job.apply_link["email"], 'Email', :target => "_blank") : link_to('Apply', job.apply_link, :target => "_blank")
 
-        %tr.job{ :id => index, :href => job.description_link }
+        %tr.job{ :id => index, :href => job.description_link, "data-html" => 'hey', :title=> "Click to view the description!", "data-placement" => "left", :rel=> "tooltip" }
           %td.title{ :href => job.description_link }= job.title
           %td.name{ :href => job.description_link }= job.company.name if job.company.present?
           %td.location{ :href => job.description_link }= "#{ job.city }, #{ job.state }, #{ job.country }" 
@@ -22,6 +22,10 @@
   :javascript
     $(document).ready(function() {
  
+      $("#results").on('hover', 'tr.job', function(event) {
+        $(this).tooltip('show')
+      });
+
       $("#results").on('click', 'td.title', function(event) {
         window.open($(this).attr('href'))
       });
