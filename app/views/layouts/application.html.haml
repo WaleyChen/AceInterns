@@ -6,10 +6,10 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body#aceinterns
-    #left-panel.container.pull-left
-      = render :partial => 'layouts/left_nav'
-      = yield :left_panel
-    #right-panel.container.pull-right.fixed
-      = yield :right_nav
-      = yield :right_panel
+    #content
+      = render :partial => 'layouts/nav' 
+      #left-panel.container.pull-left
+        = yield :left_panel
+      #right-panel.container.pull-right.fixed
+        = yield :right_panel
   = yield :javascript

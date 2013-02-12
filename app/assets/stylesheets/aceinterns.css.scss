@@ -1,32 +1,33 @@
+.navbar {
+  margin-bottom: 20px;
+
+  #email,
+  #login,
+  #password {
+    float: right;
+
+    input {
+      margin-bottom: 0px;
+      margin-right: 5px;
+      margin-top: 5px;
+      width: 100px;
+    }
+  }
+
+  #login_section {
+    form{ 
+      margin-bottom: 0px;
+    }
+  }
+}
+
 #aceinterns {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; 
   -webkit-font-smoothing: antialiased;
 
-  #right-panel {
-
-    position: fixed;
-    left: 50%;
-    width: 50%;
-
-    #iframe-wrapper {
-      padding-left: 12px;
-      height: 100%;
-      width: 100%;
-
-      iframe {
-        height: 100%;
-        width: 100% !important; 
-      }
-    }
-
-    p {
-      padding-left: 12px;
-    }
-  }
-
   #left-panel {
     display: inline-block;
-    width: 50%;
+    width: 100%;
 
     li #features {
       float: right !important;
@@ -36,15 +37,7 @@
       #dropdowns {
 
         #country {
-          select { 
-            width: 103px;
-          }
-        }
-
-        #term {
-          select { 
-            width: 103px;
-          }
+          width: 115px;
         }
 
         div {
@@ -105,19 +98,14 @@
 
       table {
         #title {
-          width: 50%;
+          width: 40%;
         }
 
-        #company {
-          width: 16%;
-        }
-
-        #location {
-          width: 18%;
-        }
-
-        #deadline {
-          width: 16%;
+        #city,
+        #company,
+        #country,
+        #province_or_state {
+          max-width: 15%;
         }
 
         tr {
@@ -128,15 +116,6 @@
           }
         }
       }
-    }
-  }
-
-  .nav {
-    li {
-      border-color: #08C;
-      border-right-style: solid !important;
-      border-right-width: 1px !important;
-      font-weight: 101;
     }
   }
 }

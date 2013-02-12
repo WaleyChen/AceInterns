@@ -57,11 +57,11 @@ AceInterns::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   root :to => 'NewsletterSubscribers#new'
 
-  resources :jobs
+  get 'jobs' => 'jobs#index', :as => 'jobs'
   get 'hn_jan_2013' => 'jobs#hn_jan_2013'
 
   resources :newsletter_subscribers
-  get 'newsletter' => 'NewsletterSubscribers#new'
+  get 'newsletter' => 'NewsletterSubscribers#new', :as => 'newsletter'
 
   get 'aceinterns' => 'application#aceinterns'
 end

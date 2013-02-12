@@ -7,10 +7,6 @@ class ApplicationController < ActionController::Base
   # get more data
   # for the mvp, when click iframe, open a new window
 
-  def aceinterns
-    @jobs = Job.all.asc(:company_name)
-  end
-
   def newsletter
     @newsletter_subscriber = NewsletterSubscriber.new
 
